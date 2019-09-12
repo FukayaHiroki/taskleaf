@@ -8,6 +8,6 @@ class Task < ApplicationRecord
   private
   def validate_name_not_includeing_comma
     errors.add(:name, 'にカンマを含めることはできません') if name&.include?(',')
-    
+    errors.add(:name, '名称を入力してください') if name&.empty?
   end
 end
